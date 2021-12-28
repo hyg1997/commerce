@@ -6,6 +6,7 @@ import type { GetCustomerWishlistOperation } from '../types/wishlist'
 import type {
   GetAllProductPathsOperation,
   GetAllProductsOperation,
+  GetAllBannersOperation,
   GetProductOperation,
 } from '../types/product'
 import type { APIProvider, CommerceAPI } from '.'
@@ -131,6 +132,22 @@ export type Operations<P extends APIProvider> = {
     }): Promise<T['data']>
 
     <T extends GetAllProductsOperation>(
+      opts: {
+        variables?: T['variables']
+        config?: P['config']
+        preview?: boolean
+      } & OperationOptions
+    ): Promise<T['data']>
+  }
+
+  getAllBanners: {
+    <T extends GetAllBannersOperation>(opts: {
+      variables?: T['variables']
+      config?: P['config']
+      preview?: boolean
+    }): Promise<T['data']>
+
+    <T extends GetAllBannersOperation>(
       opts: {
         variables?: T['variables']
         config?: P['config']

@@ -83,9 +83,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
         ref={ref}
         className={cn(s.slider, { [s.show]: isMounted }, 'keen-slider')}
       >
-        {slider && <ProductSliderControl onPrev={onPrev} onNext={onNext} />}
         {Children.map(children, (child) => {
-          // Add the keen-slider__slide className to children
           if (isValidElement(child)) {
             return {
               ...child,
@@ -100,28 +98,6 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
           return child
         })}
       </div>
-
-      <a.div className={s.album} ref={thumbsContainerRef}>
-        {slider &&
-          Children.map(children, (child, idx) => {
-            if (isValidElement(child)) {
-              return {
-                ...child,
-                props: {
-                  ...child.props,
-                  className: cn(child.props.className, s.thumb, {
-                    [s.selected]: currentSlide === idx,
-                  }),
-                  id: `thumb-${idx}`,
-                  onClick: () => {
-                    slider.current?.moveToIdx(idx)
-                  },
-                },
-              }
-            }
-            return child
-          })}
-      </a.div>
     </div>
   )
 }

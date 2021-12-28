@@ -14,6 +14,8 @@
 
 .sliderContainer {
   @apply flex items-center justify-center overflow-x-hidden bg-violet;
+  padding: 2rem 0;
+  background-color: #47463f;
 }
 
 .imageContainer {
@@ -25,7 +27,7 @@
 }
 
 .sliderContainer .img {
-  @apply w-full h-full max-h-full object-cover;
+  @apply w-full h-full max-h-full object-contain;
 }
 
 .button {

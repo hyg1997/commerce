@@ -10,6 +10,9 @@ export const productConnectionFragment = /* GraphQL */ `
         title
         vendor
         handle
+        isBanner: metafield(namespace: "my_fields", key: "banner") {
+          value
+        }
         priceRange {
           minVariantPrice {
             amount

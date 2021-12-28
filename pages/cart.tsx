@@ -83,7 +83,7 @@ export default function Cart() {
           </div>
         ) : (
           <div className="px-4 sm:px-6 flex-1">
-            <Text variant="pageHeading">My Cart</Text>
+            <Text variant="pageHeading">Mi Carrito</Text>
             <Text variant="sectionHeading">Review your Order</Text>
             <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-b border-accent-2">
               {data!.lineItems.map((item: any) => (
@@ -172,11 +172,11 @@ export default function Cart() {
                 <>
                   {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED ? (
                     <Button Component="a" width="100%" onClick={goToCheckout}>
-                      Proceed to Checkout ({total})
+                      Ir a Pagar ({total})
                     </Button>
                   ) : (
                     <Button href="/checkout" Component="a" width="100%">
-                      Proceed to Checkout
+                      Ir a Pagar
                     </Button>
                   )}
                 </>

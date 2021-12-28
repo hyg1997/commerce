@@ -74,11 +74,12 @@
 
 .imageContainer > div {
   min-width: 100%;
+  padding: 2rem;
 }
 
 .imageContainer .productImage {
   @apply transform transition-transform duration-500
-  object-cover scale-120;
+  object-contain;
 }
 
 .root .wishlistButton {
@@ -107,6 +108,7 @@
 .slim span {
   @apply bg-accent-9 text-accent-0 inline-block p-3
   font-bold text-xl break-words;
+  poadd: 3rem;
 }
 
 .root:global(.secondary) .header span {

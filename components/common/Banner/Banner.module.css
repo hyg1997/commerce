@@ -1,0 +1,11 @@
+.root {
+  @apply w-full z-30 transition-all duration-300 ease-out;
+}
+
+.root > img {
+  @apply w-full object-contain;
+  min-height: 30vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
